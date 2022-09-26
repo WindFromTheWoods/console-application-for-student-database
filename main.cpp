@@ -6,28 +6,28 @@ using namespace std;
 int main()
 {
 	data_base bdObj;
-	int operation;
-	cout << "1. Add student" << endl;
-	cout << "2. Check students" << endl;
-	cout << "3. Delite student" << endl;
-	cout << "4. Edit student" << endl;
-	cout << "9. Exit" << endl;
+	string command;
+
+	cout << "Available commands: add, check, delite, edit, exit " << endl << "Enter command: ";
 	while (true) {
-		cin >> operation;
-		if (operation == 1) {
+		cin >> command;
+		if (command == "add" || command == "ADD") {
 			bdObj.add();
 		}
-		else if (operation == 2) {
+		else if (command == "check" || command == "CHECK") {
 			bdObj.list();
 		}
-		else if (operation == 3) {
+		else if (command == "delete" || command == "DELETE") {
 			bdObj.delite();
 		}
-		else if (operation == 4) {
+		else if (command == "edit" || command == "EDIT") {
 			bdObj.edit();
 		}
-		else if (operation == 9) {
+		else if (command == "exit" || command == "EXIT") {
 			return 0;
+		}
+		else {
+			cout << "Wrong command!" << endl;
 		}
 	}
 }
